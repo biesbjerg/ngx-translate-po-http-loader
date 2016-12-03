@@ -1,0 +1,15 @@
+# IDE
+.vscode
+
+# Logs and other files
+npm-debug.log*
+.DS_Store
+
+# Compiled files
+dist
+
+# Dependency directory
+node_modules
+
+# Source maps for JS builds
+*.js.map

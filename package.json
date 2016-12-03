@@ -1,0 +1,45 @@
+{
+  "name": "ng2-translate-po-loader",
+  "version": "0.1.0",
+  "description": "Use po files with ng2-translate",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/biesbjerg/ng2-translate-po-loader.git"
+  },
+  "keywords": [],
+  "author": "Kim Biesbjerg <kim@biesbjerg.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/biesbjerg/ng2-translate-po-loader/issues"
+  },
+  "homepage": "https://github.com/biesbjerg/ng2-translate-po-loader",
+  "engines": {
+    "node": ">=4.1.1"
+  },
+  "config": {},
+  "peerDependencies": {
+    "@angular/core": "^2.0.0",
+    "@angular/http": "^2.0.0",
+    "@angular/common": "^2.0.0",
+    "@angular/platform-browser": "^2.0.0",
+    "typescript": "~2.0.0",
+    "ng2-translate": "~4.0.0"
+  },
+  "dependencies": {
+    "pofile": "^1.0.2"
+  },
+  "devDependencies": {
+    "@angular/core": "2.2.1",
+    "@angular/http": "2.2.1",
+    "@angular/common": "2.2.1",
+    "@angular/platform-browser": "2.2.1",
+    "typescript": "2.0.10",
+    "ng2-translate": "4.0.1"
+  }
+}
