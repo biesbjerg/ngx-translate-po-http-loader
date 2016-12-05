@@ -5,7 +5,7 @@ Use po files with `ng2-translate`
 ```ts
 import { Http } from '@angular/http';
 
-import { TranslatePoLoader } from 'ng2-translate-po-loader';
+import { TranslatePoLoader } from '@biesbjerg/ng2-translate-po-loader';
 
 export function createTranslateLoader(http: Http) {
 	return new TranslatePoLoader(http, 'assets/i18n', '.po');
