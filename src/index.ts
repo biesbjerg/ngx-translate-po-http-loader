@@ -2,7 +2,6 @@ import { Http, Response } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 import { TranslateLoader } from 'ng2-translate';
-
 import * as pofile from 'pofile';
 
 export class TranslatePoLoader implements TranslateLoader {

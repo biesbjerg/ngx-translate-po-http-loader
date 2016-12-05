@@ -1,11 +1,18 @@
 {
     "compilerOptions": {
-        "allowSyntheticDefaultImports": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
         "declaration": true,
-        "target": "ES6",
+        "lib": [
+            "dom",
+            "es2015"
+        ],
         "module": "commonjs",
-        "outDir": "./dist/",
-        "sourceMap": true
+        "moduleResolution": "node",
+        "removeComments": true,
+        "sourceMap": true,
+        "target": "es5",
+        "outDir": "dist/"
     },
     "include": [
         "src/**/*.ts"
