@@ -1,6 +1,6 @@
 {
   "name": "@biesbjerg/ng2-translate-po-loader",
-  "version": "0.1.3",
+  "version": "0.2",
   "description": "Use po files with ng2-translate",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
