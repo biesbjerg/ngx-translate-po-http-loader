@@ -2,9 +2,14 @@ import { Http, Response } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 import { TranslateLoader } from 'ng2-translate';
-import * as pofile from 'pofile';
+import * as gettext from 'gettext-parser';
 
 export class TranslatePoLoader implements TranslateLoader {
+
+	/**
+	 * Translation domain
+	 */
+	public domain = '';
 
 	constructor(
 		protected _http: Http,
@@ -22,7 +27,7 @@ export class TranslatePoLoader implements TranslateLoader {
 		return this._http
 			.get(`${this._prefix}/${lang}${this._suffix}`)
 			.map((response: Response) => response.text())
-			.map((contents: string) => this._parse(contents));
+			.map((contents: string) => this.parse(contents));
 	}
 
 	/**
@@ -30,17 +35,21 @@ export class TranslatePoLoader implements TranslateLoader {
 	 * @param contents
 	 * @returns {any}
 	 */
-	protected _parse(contents: string): any {
-		let translations = {};
+	public parse(contents: string): any {
+		let translations: { [key: string]: string } = {};
 
-		const data = pofile.parse(contents);
-		data.items.forEach(item => {
-			const id: string = item.msgid;
-			const translation: string = item.msgstr.pop();
-			if (id && translation)  {
-				translations[id] = translation;
-			}
-		});
+		const po = gettext.po.parse(contents, 'utf-8');
+		if (!po.translations.hasOwnProperty(this.domain)) {
+			return translations;
+		}
+
+		Object.keys(po.translations[this.domain])
+			.forEach(key => {
+				const translation: string = po.translations[this.domain][key].msgstr.pop();
+				if (key.length > 0 && translation.length > 0) {
+					translations[key] = translation;
+				}
+			});
 
 		return translations;
 	}

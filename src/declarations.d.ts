@@ -1,1 +1,1 @@
-declare module 'pofile';
+declare module 'gettext-parser';

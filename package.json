@@ -7,7 +7,8 @@
   "scripts": {
     "build": "npm run clean && tsc",
     "watch": "npm run clean && tsc --watch",
-    "clean": "rm -rf ./dist"
+    "clean": "rm -rf ./dist",
+    "lint": "tslint --force '*.ts'"
   },
   "files": [
     "dist/"
@@ -33,7 +34,7 @@
     "ng2-translate": "^4.0.0"
   },
   "dependencies": {
-    "pofile": "^1.0.2"
+    "gettext-parser": "^1.2.1"
   },
   "devDependencies": {
     "@angular/core": "2.2.1",
@@ -43,6 +44,8 @@
     "rxjs": "5.0.0-beta.12",
     "zone.js": "0.6.21",
     "typescript": "2.0.10",
-    "ng2-translate": "4.0.1"
+    "ng2-translate": "4.0.1",
+    "tslint": "^4.0.2",
+    "tslint-eslint-rules": "^3.1.0"
   }
 }
