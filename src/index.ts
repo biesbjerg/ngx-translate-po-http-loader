@@ -1,7 +1,7 @@
 import { Http, Response } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
-import { TranslateLoader } from 'ng2-translate';
+import {TranslateLoader} from '@ngx-translate/core';
 import * as gettext from 'gettext-parser';
 
 export class TranslatePoLoader implements TranslateLoader {
