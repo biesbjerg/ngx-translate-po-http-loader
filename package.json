@@ -1,7 +1,7 @@
 {
-  "name": "@biesbjerg/ng2-translate-po-loader",
-  "version": "0.2.1",
-  "description": "Use po files with ng2-translate",
+  "name": "@biesbjerg/ngx-translate-po-http-loader",
+  "version": "1.0.0",
+  "description": "Load po files for use with ngx-translate",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
@@ -15,15 +15,15 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/biesbjerg/ng2-translate-po-loader.git"
+    "url": "https://github.com/biesbjerg/ngx-translate-po-http-loader.git"
   },
   "keywords": [],
   "author": "Kim Biesbjerg <kim@biesbjerg.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/biesbjerg/ng2-translate-po-loader/issues"
+    "url": "https://github.com/biesbjerg/ngx-translate-po-http-loader/issues"
   },
-  "homepage": "https://github.com/biesbjerg/ng2-translate-po-loader",
+  "homepage": "https://github.com/biesbjerg/ngx-translate-po-http-loader",
   "engines": {
     "node": ">=4.1.1"
   },
@@ -31,10 +31,10 @@
   "peerDependencies": {
     "@angular/core": "^2.0.0",
     "@angular/http": "^2.0.0",
-    "ng2-translate": "^5.0.0"
+    "@ngx-translate/core": "^6.0.0"
   },
   "dependencies": {
-    "gettext-parser": "1.2.1"
+    "gettext-parser": "1.2.2"
   },
   "devDependencies": {
     "@angular/core": "2.2.1",
@@ -44,8 +44,8 @@
     "rxjs": "5.0.0-beta.12",
     "zone.js": "0.6.21",
     "typescript": "2.0.10",
-    "ng2-translate": "5.0.0",
-    "tslint": "4.2.0",
-    "tslint-eslint-rules": "3.2.1"
+    "@ngx-translate/core": "6.0.0",
+    "tslint": "4.5.1",
+    "tslint-eslint-rules": "3.4.0"
   }
 }

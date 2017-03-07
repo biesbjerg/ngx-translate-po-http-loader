@@ -1,14 +1,14 @@
 # Description
-Use po files with `ng2-translate`
+Load po files for use with `ngx-translate`
 
 ## Usage:
 ```ts
 import { Http } from '@angular/http';
 
-import { TranslatePoLoader } from '@biesbjerg/ng2-translate-po-loader';
+import { TranslatePoHttpLoader } from '@biesbjerg/ngx-translate-po-http-loader';
 
 export function createTranslateLoader(http: Http) {
-	return new TranslatePoLoader(http, 'assets/i18n', '.po');
+	return new TranslatePoHttpLoader(http, 'assets/i18n', '.po');
 }
 
 @NgModule({
@@ -16,9 +16,11 @@ export function createTranslateLoader(http: Http) {
 		BrowserModule,
 		HttpModule,
 		TranslateModule.forRoot({
-			provide: TranslateLoader,
-			useFactory: createTranslateLoader,
-			deps: [Http]
+			loader: {
+				provide: TranslateLoader,
+				useFactory: createTranslateLoader,
+				deps: [Http]
+			}
 		})
 	],
 	bootstrap: [AppComponent]

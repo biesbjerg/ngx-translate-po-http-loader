@@ -1,10 +1,10 @@
 import { Http, Response } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
-import { TranslateLoader } from 'ng2-translate';
+import { TranslateLoader } from '@ngx-translate/core';
 import * as gettext from 'gettext-parser';
 
-export class TranslatePoLoader implements TranslateLoader {
+export class TranslatePoHttpLoader implements TranslateLoader {
 
 	/**
 	 * Translation domain
@@ -19,7 +19,7 @@ export class TranslatePoLoader implements TranslateLoader {
 	}
 
 	/**
-	 * Gets the translations from the server
+	 * Gets the translations from file
 	 * @param lang
 	 * @returns {any}
 	 */
