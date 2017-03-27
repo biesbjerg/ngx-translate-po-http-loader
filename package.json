@@ -29,8 +29,8 @@
   },
   "config": {},
   "peerDependencies": {
-    "@angular/core": "^2.0.0",
-    "@angular/http": "^2.0.0",
+    "@angular/core": "^2.0.0 || ^4.0.0",
+    "@angular/http": "^2.0.0 || ^4.0.0",
     "@ngx-translate/core": "^6.0.0"
   },
   "dependencies": {
