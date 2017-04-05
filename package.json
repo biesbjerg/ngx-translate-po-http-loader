@@ -1,6 +1,6 @@
 {
   "name": "@biesbjerg/ngx-translate-po-http-loader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Load po files for use with ngx-translate",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
