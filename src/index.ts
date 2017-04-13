@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { TranslateLoader } from '@ngx-translate/core';
 import * as gettext from 'gettext-parser';
 
-export class TranslatePoHttpLoader implements TranslateLoader {
+export class TranslateResxHttpLoader implements TranslateLoader {
 
 	/**
 	 * Translation domain
@@ -12,11 +12,9 @@ export class TranslatePoHttpLoader implements TranslateLoader {
 	public domain = '';
 
 	constructor(
-		protected _http: Http,
-		protected _prefix: string = 'i18n',
-		protected _suffix: string = '.po'
-	) {
-	}
+		protected http: Http,
+		protected prefix: string = 'i18n',
+		protected suffix: string = '.resx') { }
 
 	/**
 	 * Gets the translations from file
@@ -24,14 +22,14 @@ export class TranslatePoHttpLoader implements TranslateLoader {
 	 * @returns {any}
 	 */
 	public getTranslation(lang: string): Observable<any> {
-		return this._http
-			.get(`${this._prefix}/${lang}${this._suffix}`)
+		return this.http
+			.get(`${this.prefix}/${lang}${this.suffix}`)
 			.map((response: Response) => response.text())
 			.map((contents: string) => this.parse(contents));
 	}
 
 	/**
-	 * Parse po file
+	 * Parse resx file
 	 * @param contents
 	 * @returns {any}
 	 */
@@ -53,5 +51,4 @@ export class TranslatePoHttpLoader implements TranslateLoader {
 
 		return translations;
 	}
-
 }

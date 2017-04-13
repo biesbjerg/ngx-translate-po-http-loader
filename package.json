@@ -1,7 +1,7 @@
 {
-  "name": "@biesbjerg/ngx-translate-po-http-loader",
-  "version": "1.0.1",
-  "description": "Load po files for use with ngx-translate",
+  "name": "@kneefer/ngx-translate-resx-http-loader",
+  "version": "0.1.0",
+  "description": "Load resx files for use with ngx-translate",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
@@ -15,15 +15,15 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/biesbjerg/ngx-translate-po-http-loader.git"
+    "url": "https://github.com/biesbjerg/ngx-translate-resx-http-loader.git"
   },
   "keywords": [],
-  "author": "Kim Biesbjerg <kim@biesbjerg.com>",
+  "author": "Szymon Bartnik <kneefer@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/biesbjerg/ngx-translate-po-http-loader/issues"
+    "url": "https://github.com/kneefer/ngx-translate-resx-http-loader/issues"
   },
-  "homepage": "https://github.com/biesbjerg/ngx-translate-po-http-loader",
+  "homepage": "https://github.com/kneefer/ngx-translate-resx-http-loader",
   "engines": {
     "node": ">=4.1.1"
   },
