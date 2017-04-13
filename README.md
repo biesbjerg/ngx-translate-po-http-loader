@@ -1,10 +1,14 @@
-# Description
+# NgX Translate ResX Http Loader
+
+## Description
 Load resx files for use with `ngx-translate`  
 Forked from [ngx-translate-po-http-loader](https://github.com/biesbjerg/ngx-translate-po-http-loader)
 
-To parse ResX file (XML based) I use [ltx](https://github.com/node-xmpp/ltx) XML parser library
+This library uses [ltx](https://github.com/node-xmpp/ltx) XML parser library in order to parse ResX files (XML-based).
 
-## Usage:
+To modify ResX files in friendly way I recommend [ResX Resource Manager](https://github.com/tom-englert/ResXResourceManager) GUI. Available both as standalone Windows application and Visual Studio extension.
+
+## Usage
 ```ts
 import { Http } from '@angular/http';
 import { TranslateResxHttpLoader } from '@kneefer/ngx-translate-resx-http-loader';
@@ -30,7 +34,7 @@ export function createTranslateLoader(http: Http) {
 export class AppModule { }
 ```
 
-## Development:
+## Development
 #### Clone
 ```
 git clone https://github.com/kneefer/ngx-translate-resx-http-loader.git
