@@ -7,7 +7,7 @@
         "module": "commonjs",
         "moduleResolution": "node",
         "sourceMap": true,
-        "outDir": "dist/",
+        "outDir": "./dist",
         "declaration": true,
         "target": "es5",
         "lib": [

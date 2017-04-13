@@ -1,1 +1,1 @@
-declare module 'gettext-parser';
+declare module 'ltx';

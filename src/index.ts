@@ -2,14 +2,9 @@ import { Http, Response } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 import { TranslateLoader } from '@ngx-translate/core';
-import * as gettext from 'gettext-parser';
+import * as ltx from 'ltx';
 
 export class TranslateResxHttpLoader implements TranslateLoader {
-
-	/**
-	 * Translation domain
-	 */
-	public domain = '';
 
 	constructor(
 		protected http: Http,
@@ -25,29 +20,31 @@ export class TranslateResxHttpLoader implements TranslateLoader {
 		return this.http
 			.get(`${this.prefix}/${lang}${this.suffix}`)
 			.map((response: Response) => response.text())
-			.map((contents: string) => this.parse(contents));
+			.map((contents: string) => this.parse(contents, lang));
 	}
 
 	/**
 	 * Parse resx file
 	 * @param contents
+	 * @param lang
 	 * @returns {any}
 	 */
-	public parse(contents: string): any {
-		let translations: { [key: string]: string } = {};
+	private parse(contents: string, lang: string): any {
+		var xml = ltx.parse(contents);
 
-		const po = gettext.po.parse(contents, 'utf-8');
-		if (!po.translations.hasOwnProperty(this.domain)) {
-			return translations;
-		}
-
-		Object.keys(po.translations[this.domain])
-			.forEach(key => {
-				const translation: string = po.translations[this.domain][key].msgstr.pop();
-				if (key.length > 0 && translation.length > 0) {
-					translations[key] = translation;
+		const translations = xml.children
+			.filter((x: any) => x.name && x.name === 'data')
+			.reduce((total: any, current: any) => {
+				var name = current.attrs.name;
+				var value = current.children.filter((x: any) => x.name && x.name === 'value');
+				if (value.length === 1) {
+					value = value[0].children[0];
+					total[name] = value;
+				} else {
+					console.error(`Data node of token '${name}' for language '${lang}' should contain exactly ONE value node. Found '${value.length}' values`);
 				}
-			});
+				return total;
+			}, {});
 
 		return translations;
 	}
