@@ -1,6 +1,6 @@
 {
   "name": "@kneefer/ngx-translate-resx-http-loader",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "Load resx files for use with ngx-translate",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -9,12 +9,15 @@
     "watch": "tsc --watch",
     "lint": "tslint --force '*.ts'"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "dist/"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/biesbjerg/ngx-translate-resx-http-loader.git"
+    "url": "https://github.com/kneefer/ngx-translate-resx-http-loader.git"
   },
   "keywords": [],
   "author": "Szymon Bartnik <kneefer@gmail.com>",
