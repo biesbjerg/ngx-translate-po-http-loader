@@ -8,7 +8,8 @@ export class TranslateResxHttpLoader implements TranslateLoader {
 
 	constructor(
 		protected http: Http,
-		protected prefix: string = 'i18n',
+		protected prefix: string = '',
+		protected transLocation: string = 'assets/i18n',
 		protected suffix: string = '.resx') { }
 
 	/**
@@ -18,7 +19,7 @@ export class TranslateResxHttpLoader implements TranslateLoader {
 	 */
 	public getTranslation(lang: string): Observable<any> {
 		return this.http
-			.get(`${this.prefix}/${lang}${this.suffix}`)
+			.get(`${this.transLocation}/${this.prefix}${lang}${this.suffix}`)
 			.map((response: Response) => response.text())
 			.map((contents: string) => this.parse(contents, lang));
 	}
