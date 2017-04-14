@@ -1,13 +1,15 @@
 {
   "name": "@kneefer/ngx-translate-resx-http-loader",
-  "version": "0.3.0",
-  "description": "Load resx files for use with ngx-translate",
+  "version": "0.3.1",
+  "description": "Load resx files for use with ngx-translate Angular translation library",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc --watch",
-    "lint": "tslint --force '*.ts'"
+    "build": "npm run clean && tsc",
+    "watch": "npm run clean && tsc --watch",
+    "clean": "rimraf dist",
+    "lint": "tslint --force '*.ts'",
+    "release": "npm publish"
   },
   "publishConfig": {
     "access": "public"
@@ -19,7 +21,14 @@
     "type": "git",
     "url": "https://github.com/kneefer/ngx-translate-resx-http-loader.git"
   },
-  "keywords": [],
+  "keywords": [
+    "angular",
+    "angular 2",
+    "i18n",
+    "translate",
+    "ngx-translate",
+    "resx"
+  ],
   "author": "Szymon Bartnik <kneefer@gmail.com>",
   "license": "MIT",
   "bugs": {
@@ -48,6 +57,7 @@
     "typescript": "^2.2.2",
     "@ngx-translate/core": "^6.0.1",
     "tslint": "^4.5.1",
-    "tslint-eslint-rules": "^3.4.0"
+    "tslint-eslint-rules": "^3.4.0",
+    "rimraf": "^2.6.1"
   }
 }

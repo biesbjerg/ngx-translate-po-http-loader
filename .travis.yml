@@ -1,0 +1,26 @@
+language: node_js
+cache: yarn
+sudo: false
+notifications:
+  email: false
+node_js:
+- '7'
+branches:
+  except:
+  - "/^v\\d+\\.\\d+\\.\\d+$/"
+before_script:
+- npm prune
+#after_success:
+#- npm run release
+before_deploy:
+- npm run build
+deploy:
+  provider: npm
+  email: kneefer@gmail.com
+  api_key:
+    secure: dVbxmkNPzds/4oPouU5YMgGDfG1CEdrv+Aa8IOnAj3hCJRPEcsKX4aQ36eZgpk+NRRBtv3e/mcchs8+K+NeQGFUJ5qBFS6cnpabG8Yhj+GBb2oVutsjwP47y2KR5Tq081QMBzrOKMRi86vj1bq5wFnp9KL9Cm/w38iBnVL/xT+SBKU74wrQg/LcfhC6p/b9SYhph2IovahIZLSi6IohAG7B+X4zQuGLp7aG57QoM1dCyS3C37sckMmtOPdc9x2nWW5vP6u7s4DyGSKyLtt1+cM1RVNS0TZe4qx2nDFebkfQ0FTg+9/8GHejYU+Z8oS9heGfHBpeVojo97vjiaYb7uKgXOMS76ckczEC8o88/8D0nt0Fn3esUWDK5DzusTmjQ6ZDdhdVuosdcmRrvKtoQ2rk7WgYkHffvamgyISYBOjWbzNxjElLEqJpvt3l3ptl7Ix9H1dlZscSbMTLBl7IbsUWYiBKWisUKUtMJt3X72lYfQxBOmb7twKF7gZA6Jnmb5dhxK+DMkmBI6hoF6BZR3pro5QbvOQ7Rplql9hutnik9SXIkKcx4FHHc95YL4DPMBOwqWCbLVtYVBKxYGHwJ50l7RGgSJXqDNXxLAYMH1wU/w6ChuNKhmeH8TQY1+bPS5XOsSCA9iblerqErdxER6npjZ8gMnESdNSYovu4RlME=
+  skip_cleanup: true  
+  on:
+    repo: kneefer/ngx-translate-resx-http-loader
+after_deploy:
+- npm run clean

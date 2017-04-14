@@ -1,4 +1,4 @@
-# NgX Translate ResX Http Loader
+# NgX Translate ResX Http Loader [![Build Status](https://travis-ci.org/kneefer/ngx-translate-resx-http-loader.svg?branch=master)](https://travis-ci.org/kneefer/ngx-translate-resx-http-loader) [![npm version](https://img.shields.io/npm/v/@kneefer/ngx-translate-resx-http-loader.svg)](https://www.npmjs.com/package/@kneefer/ngx-translate-resx-http-loader)
 Load resx files for use with [ngx-translate](https://github.com/ngx-translate/core) Angular translation library.   
 Forked from [ngx-translate-po-http-loader](https://github.com/biesbjerg/ngx-translate-po-http-loader)
 
