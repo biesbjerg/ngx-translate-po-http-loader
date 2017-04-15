@@ -18,7 +18,8 @@ import { Http } from '@angular/http';
 import { TranslateResxHttpLoader } from '@kneefer/ngx-translate-resx-http-loader';
 
 export function createTranslateLoader(http: Http) {
-  return new TranslateResxHttpLoader(http, 'assets/i18n', '.resx');
+  // Only first constructor parameter is required
+  return new TranslateResxHttpLoader(http, 'trans.', 'assets/i18n', '.resx');
 }
 
 @NgModule({
