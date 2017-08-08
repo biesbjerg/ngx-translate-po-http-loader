@@ -1,6 +1,6 @@
 {
   "name": "@kneefer/ngx-translate-resx-http-loader",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Load resx files for use with ngx-translate Angular translation library",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
