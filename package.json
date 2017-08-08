@@ -15,6 +15,7 @@
     "access": "public"
   },
   "files": [
+    "src/",
     "dist/"
   ],
   "repository": {
