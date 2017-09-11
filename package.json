@@ -29,22 +29,21 @@
   },
   "config": {},
   "peerDependencies": {
-    "@angular/core": "^2.0.0 || ^4.0.0",
-    "@angular/http": "^2.0.0 || ^4.0.0",
-    "@ngx-translate/core": "^6.0.0"
+    "@angular/core": "^4.3.0",
+    "@angular/common": "^4.3.0",
+    "@ngx-translate/core": "^7.0.0"
   },
   "dependencies": {
     "gettext-parser": "1.2.2"
   },
   "devDependencies": {
-    "@angular/core": "2.2.1",
-    "@angular/common": "2.2.1",
-    "@angular/platform-browser": "2.2.1",
-    "@angular/http": "2.2.1",
-    "rxjs": "5.0.0-beta.12",
-    "zone.js": "0.6.21",
-    "typescript": "2.0.10",
-    "@ngx-translate/core": "6.0.0",
+    "@angular/core": "4.3.1",
+    "@angular/common": "4.3.1",
+    "@angular/platform-browser": "4.3.1",
+    "rxjs": "5.4.3",
+    "zone.js": "0.8.11",
+    "typescript": "2.3.4",
+    "@ngx-translate/core": "7.0.0",
     "tslint": "4.5.1",
     "tslint-eslint-rules": "3.4.0"
   }
