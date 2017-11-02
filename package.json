@@ -1,6 +1,6 @@
 {
   "name": "@kneefer/ngx-translate-resx-http-loader",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Load resx files for use with ngx-translate Angular translation library",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -41,8 +41,8 @@
   },
   "config": {},
   "peerDependencies": {
-    "@angular/core": "^2.0.0 || ^4.0.0",
-    "@angular/http": "^2.0.0 || ^4.0.0",
+    "@angular/core": "*",
+    "@angular/http": "*",
     "@ngx-translate/core": "^7.0.0"
   },
   "dependencies": {
