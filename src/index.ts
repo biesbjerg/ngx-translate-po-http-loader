@@ -1,4 +1,4 @@
-import { Http, Response } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs/Observable';
 import { TranslateLoader } from '@ngx-translate/core';
@@ -12,7 +12,7 @@ export class TranslatePoHttpLoader implements TranslateLoader {
 	public domain = '';
 
 	constructor(
-		protected _http: Http,
+		protected _http: HttpClient,
 		protected _prefix: string = 'i18n',
 		protected _suffix: string = '.po'
 	) {
@@ -25,8 +25,7 @@ export class TranslatePoHttpLoader implements TranslateLoader {
 	 */
 	public getTranslation(lang: string): Observable<any> {
 		return this._http
-			.get(`${this._prefix}/${lang}${this._suffix}`)
-			.map((response: Response) => response.text())
+			.get(`${this._prefix}/${lang}${this._suffix}`, { responseType: 'text' })
 			.map((contents: string) => this.parse(contents));
 	}
 
