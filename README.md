@@ -14,10 +14,11 @@ npm install @kneefer/ngx-translate-resx-http-loader
 
 ## Usage
 ```ts
-import { Http } from '@angular/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateResxHttpLoader } from '@kneefer/ngx-translate-resx-http-loader';
 
-export function createTranslateLoader(http: Http) {
+export function createTranslateLoader(http: HttpClient) {
   // Only first constructor parameter is required
   return new TranslateResxHttpLoader(http, 'trans.', 'assets/i18n', '.resx');
 }
@@ -25,18 +26,24 @@ export function createTranslateLoader(http: Http) {
 @NgModule({
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
         useFactory: createTranslateLoader,
-        deps: [Http]
+        deps: [HttpClient]
       }
     })
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+```
+
+## Old HttpModule
+If you want to use deprecated HttpModule (Angular < 4.3.0) please use following version:
+```
+@kneefer/ngx-translate-resx-http-loader@0.3.5
 ```
 
 ## Development

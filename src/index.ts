@@ -1,16 +1,19 @@
-import { Http, Response } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+
 import { TranslateLoader } from '@ngx-translate/core';
 import * as ltx from 'ltx';
 
 export class TranslateResxHttpLoader implements TranslateLoader {
 
 	constructor(
-		protected http: Http,
+		protected http: HttpClient,
 		protected prefix: string = '',
 		protected transLocation: string = 'assets/i18n',
-		protected suffix: string = '.resx') { }
+		protected suffix: string = '.resx'
+	) { }
 
 	/**
 	 * Gets the translations from file
@@ -18,10 +21,10 @@ export class TranslateResxHttpLoader implements TranslateLoader {
 	 * @returns {any}
 	 */
 	public getTranslation(lang: string): Observable<any> {
+		const fullUrl = `${this.transLocation}/${this.prefix}${lang}${this.suffix}`;
 		return this.http
-			.get(`${this.transLocation}/${this.prefix}${lang}${this.suffix}`)
-			.map((response: Response) => response.text())
-			.map((contents: string) => this.parse(contents, lang));
+			.get(fullUrl, { responseType: 'text' })
+			.map(content => this.parse(content, lang));
 	}
 
 	/**
