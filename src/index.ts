@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs/Observable';
+import { map } from 'rxjs/operators/map';
 import { TranslateLoader } from '@ngx-translate/core';
 import * as gettext from 'gettext-parser';
 
@@ -26,7 +27,9 @@ export class TranslatePoHttpLoader implements TranslateLoader {
 	public getTranslation(lang: string): Observable<any> {
 		return this._http
 			.get(`${this._prefix}/${lang}${this._suffix}`, { responseType: 'text' })
-			.map((contents: string) => this.parse(contents));
+			.pipe(
+				map((contents: string) => this.parse(contents))
+			);
 	}
 
 	/**
