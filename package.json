@@ -31,7 +31,8 @@
   "peerDependencies": {
     "@angular/core": ">= 4.3.0 < 6.0.0",
     "@angular/common": ">= 4.3.0 < 6.0.0",
-    "@ngx-translate/core": "^8.0.0"
+    "@ngx-translate/core": "^8.0.0",
+    "rxjs": ">= 5.5.5"
   },
   "dependencies": {
     "gettext-parser": "1.2.2"
@@ -40,7 +41,7 @@
     "@angular/core": "4.3.1",
     "@angular/common": "4.3.1",
     "@angular/platform-browser": "4.3.1",
-    "rxjs": "5.4.3",
+    "rxjs": "5.5.5",
     "zone.js": "0.8.11",
     "typescript": "2.3.4",
     "@ngx-translate/core": "8.0.0",
