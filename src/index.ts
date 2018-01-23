@@ -26,9 +26,7 @@ export class TranslatePoHttpLoader implements TranslateLoader {
 	public getTranslation(lang: string): Observable<any> {
 		return this._http
 			.get(`${this._prefix}/${lang}${this._suffix}`, { responseType: 'text' })
-			.pipe(
-			map((contents: string) => this.parse(contents))
-			);
+			.pipe(map((contents: string) => this.parse(contents)));
 	}
 
 	/**
