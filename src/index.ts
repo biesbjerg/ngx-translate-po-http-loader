@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { TranslateLoader } from '@ngx-translate/core';
 import * as gettext from 'gettext-parser';
-import { Observable } from 'rxjs/Observable';
-import { map } from 'rxjs/operators/map';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 export class TranslatePoHttpLoader implements TranslateLoader {
 
