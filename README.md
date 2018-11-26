@@ -18,7 +18,13 @@ import { TranslatePoHttpLoader } from '@biesbjerg/ngx-translate-po-http-loader';
 export function createTranslateLoader(http: HttpClient) {
 	return new TranslatePoHttpLoader(http, 'assets/i18n', '.po');
 }
-
+// or
+export function createTranslateLoader(http: HttpClient) {
+  return new MultiTranslatePoHttpLoader(http, [
+    { prefix: 'assets/i18n', suffix: '.po' },
+    { prefix: 'assets/i18n/lib1', suffix: '.po' }
+  ]);
+}
 @NgModule({
 	imports: [
 		BrowserModule,
