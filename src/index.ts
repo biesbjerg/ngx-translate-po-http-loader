@@ -44,7 +44,7 @@ export class TranslatePoHttpLoader implements TranslateLoader {
 
 		Object.keys(po.translations[this.domain])
 			.forEach(key => {
-				const translation: string = po.translations[this.domain][key].msgstr.pop();
+				const translation: string = po.translations[this.domain][key].msgstr.pop() || "";
 				if (key.length > 0 && translation.length > 0) {
 					translations[key] = translation;
 				}
